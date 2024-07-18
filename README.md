@@ -1,1 +1,1 @@
-make tempate for jobs interviews
+ template for home tasks jobs interviews
