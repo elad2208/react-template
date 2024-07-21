@@ -1,18 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import MainComponent from './Components/MainComponent'
 import TodayTime from './Components/TodayTime'
 import PropsComponent from './Components/PropsComponent'
+import CountButton from './Components/CountButton'
+import ShowHover from './Components/ShowHover'
+import InputViewer from './Components/InputViewer'
+import Rating from './Components/Rating'
+import TableViewer from './Components/TableViewer'
+import MyCard from './Components/Card'
 
 type userInfo = {
   name: string,
   prefix: string,
   age: number,
  };
+
  
 function App():JSX.Element {
-  const [count, setCount] = useState(0)
   const myVar:string = 'Hello World!';
   const anotherVar:string = 'My Name is Elad';
   const myChildren:string[] = ['Omri', 'Kfir', 'Daniel', 'Michal'];
@@ -27,35 +31,26 @@ function App():JSX.Element {
     prefix: "Dr.",
     age: 20,
     }
+
    
   return (
     <>
       <TodayTime/>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+      <MyCard/>
 
       <PropsComponent user={user}/>
       <MainComponent/>
-      
+      <InputViewer/>
       <p>{myVar}</p>
       <p>{anotherVar}-{myVar}</p>
       <ul>{listItems}</ul>
       <p>{myChildren.map(child => <span> {child} </span>)}</p>
       
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <CountButton/>
+      <ShowHover/>
+      
+      <Rating/>
+     <p><TableViewer/></p>
     </>
   )
 }
