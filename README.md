@@ -1,1 +1,0 @@
- template for home tasks jobs interviews
