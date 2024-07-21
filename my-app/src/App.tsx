@@ -3,7 +3,14 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import MainComponent from './Components/MainComponent'
 import TodayTime from './Components/TodayTime'
+import PropsComponent from './Components/PropsComponent'
 
+type userInfo = {
+  name: string,
+  prefix: string,
+  age: number,
+ };
+ 
 function App():JSX.Element {
   const [count, setCount] = useState(0)
   const myVar:string = 'Hello World!';
@@ -15,6 +22,11 @@ function App():JSX.Element {
     {father}
     </li>
    );
+   const user: userInfo = {
+    name: "Prosper Asayag",
+    prefix: "Dr.",
+    age: 20,
+    }
    
   return (
     <>
@@ -24,7 +36,8 @@ function App():JSX.Element {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      
+
+      <PropsComponent user={user}/>
       <MainComponent/>
       
       <p>{myVar}</p>
