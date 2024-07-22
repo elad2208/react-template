@@ -1,4 +1,5 @@
 import './App.css'
+import Router from './Routes/Router'
 import MainComponent from './Components/MainComponent'
 import TodayTime from './Components/TodayTime'
 import PropsComponent from './Components/PropsComponent'
@@ -8,6 +9,9 @@ import InputViewer from './Components/InputViewer'
 import Rating from './Components/Rating'
 import TableViewer from './Components/TableViewer'
 import MyCard from './Components/Card'
+import MyRouter from './Routes/MyRouter'
+import MyMultiCard from './Components/MyMultiCard'
+
 
 type userInfo = {
   name: string,
@@ -36,8 +40,10 @@ function App():JSX.Element {
   return (
     <>
       <TodayTime/>
+      <MyMultiCard/>
+      <MyRouter/>
       <MyCard/>
-
+      
       <PropsComponent user={user}/>
       <MainComponent/>
       <InputViewer/>
@@ -51,6 +57,8 @@ function App():JSX.Element {
       
       <Rating/>
      <p><TableViewer/></p>
+     <Router/>
+     
     </>
   )
 }
